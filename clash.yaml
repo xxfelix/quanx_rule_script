@@ -11,7 +11,7 @@ external-controller: 127.0.0.1:9090
 proxy-providers:
   All:
     type: http
-    url: "https://api.v1.mk/sub?target=clash&url=订阅链接&emoji=true&list=true&udp=true"
+    url: "https://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=b64add668182a3ba6ad5889b91e56ac5"
     # 以下方法任选其一⚠️有Clash订阅优先使用方法二❗️
     # 1.可以使用任意类型的链接仅替换上面文字，多个链接使用英文符号的竖杠|隔开一起写上即可
     # 2.直接使用Clash类型订阅链接替换掉整个引号""内的链接
@@ -20,7 +20,7 @@ proxy-providers:
     health-check:
       enable: true
       interval: 600
-      url: http://www.gstatic.com/generate_204
+      url: https://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=b64add668182a3ba6ad5889b91e56ac5
       
   US:
     filter: 美|洛杉矶|🇺🇸|US|(?i)States|American
@@ -29,7 +29,7 @@ proxy-providers:
     health-check:
       enable: true
       interval: 600
-      url: http://www.gstatic.com/generate_204
+      url: https://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=b64add668182a3ba6ad5889b91e56ac5
   JP:
     filter: 日|东京|🇯🇵|JP|(?i)Japan
     type: file
@@ -37,7 +37,7 @@ proxy-providers:
     health-check:
       enable: true
       interval: 600
-      url: http://www.gstatic.com/generate_204
+      url: https://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=b64add668182a3ba6ad5889b91e56ac5
   TW:
     filter: 台|🇨🇳|🇹🇼|TW|(?i)Taiwan
     type: file
@@ -45,7 +45,7 @@ proxy-providers:
     health-check:
       enable: true
       interval: 600
-      url: http://www.gstatic.com/generate_204
+      url: https://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=b64add668182a3ba6ad5889b91e56ac5
   HK:
     filter: 港|🇭🇰|HK|(?i)Hong
     type: file
@@ -53,35 +53,20 @@ proxy-providers:
     health-check:
       enable: true
       interval: 600
-      url: http://www.gstatic.com/generate_204
+      url: https://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=b64add668182a3ba6ad5889b91e56ac5
       
 dns:
-  enable: true
-  ipv6: true
-  listen: 0.0.0.0:53
-  default-nameserver:
-    - 119.29.29.29
-    - 223.5.5.5
-  enhanced-mode: fake-ip
-  fake-ip-range: 198.18.0.1/16
-  fake-ip-filter:
-    - '*.lan'
-    - localhost.ptlogin2.qq.com
-    - '+.srv.nintendo.net'
-    - '+.stun.playstation.net'
-    - '+.msftconnecttest.com'
-    - '+.msftncsi.com'
-    - '+.xboxlive.com'
-    - 'msftconnecttest.com'
-    - 'xbox.*.microsoft.com'
-    - '*.battlenet.com.cn'
-    - '*.battlenet.com'
-    - '*.blzstatic.cn'
-    - '*.battle.net'
-  nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
-
+    enable: true
+    ipv6: false
+    default-nameserver: [223.5.5.5, 119.29.29.29]
+    enhanced-mode: redir-host
+    fake-ip-range: 198.18.0.1/16
+    use-hosts: true
+    nameserver: ['https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
+    fallback: ['https://doh.dns.sb/dns-query', 'https://dns.cloudflare.com/dns-query', 'https://dns.twnic.tw/dns-query', 'tls://8.8.4.4:853']
+    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32] }
+    
+    
 proxies:
             
 proxy-groups:
@@ -99,13 +84,13 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png
     use: 
        - All
-    url: "http://www.gstatic.com/generate_204"
+    url: "https://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=b64add668182a3ba6ad5889b91e56ac5"
     interval: 300
     
   - name: 故障转移
     type: fallback
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bypass.png
-    url: 'http://www.gstatic.com/generate_204'
+    url: 'hhttps://xn--4gq62f52gdss.com/api/v1/client/subscribe?token=b64add668182a3ba6ad5889b91e56ac5'
     interval: 300
     use: 
        - All
