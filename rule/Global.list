@@ -1,6 +1,5 @@
 host-suffix, vercel.app, Auto-US
-host-suffix, discord, Auto-US
-host-suffix, discordapp, Auto-US
+host-keyword, discord, Auto-US
 host-suffix, openai.com, Auto-US
 host-suffix, rosettastone.com, Auto-US
 host-suffix, fast.lycorisrecoil.org, Auto-US
