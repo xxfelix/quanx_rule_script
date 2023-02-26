@@ -1,5 +1,5 @@
-host-suffix, vercel.app
-host-keyword, discord
-host-suffix, openai.com
-host-suffix, rosettastone.com
-host-suffix, fast.lycorisrecoil.org
+DOMAIN-SUFFIX,vercel.app
+HOST-KEYWORD,discord
+DOMAIN-SUFFIX,openai.com
+DOMAIN-SUFFIX,rosettastone.com
+DOMAIN-SUFFIX,fast.lycorisrecoil.org
